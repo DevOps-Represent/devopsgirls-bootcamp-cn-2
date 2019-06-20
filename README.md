@@ -1,7 +1,9 @@
-# SEEK & DevOps Girls Bootcamp
+# The second DevOps Girls bootcamp in Xi'an, China
 
-DevOps Girls with the massive support from SEEK are hosting a day-long bootcamp
-to explore all things Serverless!
+DevOps Girls is hosting a day-long bootcamp to explore all things Serverless 
+in Thoughtworks Xi'an office!
+
+This material is heavily based on [SEEK & DevOps Girls Bootcamp](https://github.com/DevOps-Girls/DevOps-Girls-Bootcamp-4).
 
 If you're looking to be buzzword compliant, 'serverless' is on that list. We
 wanted to create an opportunity for people to learn about the technical concepts
@@ -32,8 +34,9 @@ have access to all the learning materials.
 
 Things you'll need:
 
-- a laptop! (but if this is not possible, send us a message)
-- an AWS account - (See Resources below)
+- a laptop!
+
+- Setup local envrionment.  _TODO:_ Write the guideline for Windows, Linux and Mac.
 
 ---
 
@@ -52,33 +55,23 @@ Things you'll need:
 ## Schedule
 
 ```plaintext
-8.45am-9.30am
-Coffee and Snacks
-AWS account creation help (if needed)
+09:20 AM  签到
 
-9.30am (sharp)
-Welcome and kickoff
-Key concepts
-1st Learning Session
+09:30 AM  开场&破冰
 
-12pm-1.15pm
-Lunch
+09:50 AM  DevOps Girls澳洲组织者kickoff
 
-1.15pm-2pm
-Palette cleanser - Theresa Neate
+10:00 AM  AWS关键概念导入
 
-2pm-3pm
-2nd Learning Session
+11:00 AM  WorkShop(Part 1)
 
-3pm-3.30pm
-Afternoon Tea
+午餐时间：ThoughtWorks Community提供简餐🍱
 
-3.30-5pm
-Final Learning Session & 'Next Steps'
+13:00 PM  女性DevOps经验分享
 
-5pm-7pm
-Networking and drinks (self funded)
-OPTIONAL - Venue TBC
+14:00 PM  WorkShop(Part 2 & 3)
+
+16:00 PM  填写反馈&合影留念
 ```
 ---
 ## Resources
@@ -86,10 +79,6 @@ OPTIONAL - Venue TBC
 ### Command Line on Code Academy (first lesson is enough)
 
 <https://www.codecademy.com/learn/learn-the-command-line>
-
-### Creating and configuring your personal AWS account and CLI
-
-<https://github.com/DevOps-Girls/DevOps-Girls-Bootcamp-4/blob/master/aws_account_setup.pptx>
 
 ### AWS Tech Essentials Training (optional)
 

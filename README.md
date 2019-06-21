@@ -36,7 +36,7 @@ Things you'll need:
 
 - a laptop!
 
-- Setup local envrionment.  _TODO:_ Write the guideline for Linux and Mac.
+- Setup local envrionment.  
   - [Windows](guideline/set-up-environment-in-windows.md)
 ---
 

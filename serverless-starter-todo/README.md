@@ -401,7 +401,13 @@ resources:
     DatabaseTable:
       Type: AWS::DynamoDB::Table
       Properties:
-        # more stuff here
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+        BillingMode: PAY_PER_REQUEST
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
 ```
 
 Properties that we want to add:
@@ -537,13 +543,13 @@ for each step below:
 <details><summary>serverless.yml</summary><p>
 
 ```yaml
-service: serverless-starter-todo
+service: serverless-starter-todo-${yourname}
 
 provider:
   name: aws
-  region: ${opt:region, 'ap-southeast-2'}
+  region: ${opt:region, 'ap-east-1'}
   runtime: nodejs8.10
-  stackName: serverless-starter-todo-${self:provider.stage}
+  stackName: ${self:service}-${self:provider.stage}
   stage: ${opt:stage, 'dev'}
   iamRoleStatements:
     # Replace these square brackets with IAM permissions.
@@ -572,13 +578,13 @@ resources:
 <details><summary>serverless.yml</summary><p>
 
 ```yaml
-service: serverless-starter-todo
+service: serverless-starter-todo-${yourname}
 
 provider:
   name: aws
-  region: ${opt:region, 'ap-southeast-2'}
+  region: ${opt:region, 'ap-east-1'}
   runtime: nodejs8.10
-  stackName: serverless-starter-todo-${self:provider.stage}
+  stackName: ${self:service}-${self:provider.stage}
   stage: ${opt:stage, 'dev'}
   iamRoleStatements:
     # Replace these square brackets with IAM permissions.
@@ -639,21 +645,22 @@ resources:
 <details><summary>serverless.yml</summary><p>
 
 ```yaml
-service: serverless-starter-todo
+service: serverless-starter-todo-${yourname}
 
 provider:
   name: aws
-  region: ${opt:region, 'ap-southeast-2'}
+  region: ${opt:region, 'ap-east-1'}
   runtime: nodejs8.10
-  stackName: serverless-starter-todo-${self:provider.stage}
+  stackName: ${self:service}-${self:provider.stage}
   stage: ${opt:stage, 'dev'}
+  role: arn:aws:iam::494526681395:role/service-role/devops-girls-todo-role
   iamRoleStatements:
     # Replace these square brackets with IAM permissions.
     []
 
 functions:
   TodoApi:
-    name: serverless-starter-todo-api-${self:provider.stage}
+    name: ${self:service}-api-${self:provider.stage}
     handler: index.handler
     environment:
       TABLE_NAME:
@@ -710,21 +717,22 @@ resources:
 <details><summary>serverless.yml</summary><p>
 
 ```yaml
-service: serverless-starter-todo
+service: serverless-starter-todo-${yourname}
 
 provider:
   name: aws
-  region: ${opt:region, 'ap-southeast-2'}
+  region: ${opt:region, 'ap-east-1'}
   runtime: nodejs8.10
-  stackName: serverless-starter-todo-${self:provider.stage}
+  stackName: ${self:service}-${self:provider.stage}
   stage: ${opt:stage, 'dev'}
+  role: arn:aws:iam::494526681395:role/service-role/devops-girls-todo-role
   iamRoleStatements:
     # Replace these square brackets with IAM permissions.
     []
 
 functions:
   TodoApi:
-    name: serverless-starter-todo-api-${self:provider.stage}
+    name: ${self:service}-api-${self:provider.stage}
     handler: index.handler
     environment:
       TABLE_NAME:
@@ -791,14 +799,15 @@ resources:
 <details><summary>serverless.yml</summary><p>
 
 ```yaml
-service: serverless-starter-todo
+service: serverless-starter-todo-${yourname}
 
 provider:
   name: aws
-  region: ${opt:region, 'ap-southeast-2'}
+  region: ${opt:region, 'ap-east-1'}
   runtime: nodejs8.10
-  stackName: serverless-starter-todo-${self:provider.stage}
+  stackName: ${self:service}-${self:provider.stage}
   stage: ${opt:stage, 'dev'}
+  role: arn:aws:iam::494526681395:role/service-role/devops-girls-todo-role
   iamRoleStatements:
     - Effect: Allow
       Action:
@@ -817,7 +826,7 @@ provider:
 
 functions:
   TodoApi:
-    name: serverless-starter-todo-api-${self:provider.stage}
+    name: ${self:service}-api-${self:provider.stage}
     handler: index.handler
     environment:
       TABLE_NAME:

@@ -95,6 +95,4 @@ Find `uninstall a program` in your control panel, choose the software what you d
 
 百度网盘: https://pan.baidu.com/s/1acsi5LPK6dgwx045pKGHdQ  提取码：a5nu 
 
-Onedrive: https://1drv.ms/f/s!An71MUpIVSwtlqggR9Bi-yn7a0zdug
-
 Weiyun: https://share.weiyun.com/5dV0U37

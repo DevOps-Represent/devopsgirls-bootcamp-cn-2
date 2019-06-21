@@ -33,7 +33,7 @@ S3 -- API Gateway -- Lambda -- DynamoDB
 Copy starter files from our template:
 
 ```shell
-serverless create --template-url https://github.com/DevOps-Girls/DevOps-Girls-Bootcamp-4/tree/master/serverless-starter-todo
+serverless create --template-url https://github.com/DevOps-Girls/devopsgirls-bootcamp-cn-2/tree/master/serverless-starter-todo
 
 # Serverless: Generating boilerplate...
 # Serverless: Downloading and installing "serverless-starter-todo"...
@@ -49,22 +49,23 @@ Open the _serverless.yml_ file, which describes a serverless application.
 It begins by listing out some basic details:
 
 ```yaml
-service: serverless-starter-todo
+service: serverless-starter-todo-${yourname}
 
 provider:
   name: aws
-  region: ${opt:region, 'ap-southeast-2'}
+  region: ${opt:region, 'ap-east-1'}
   runtime: nodejs8.10
-  stackName: serverless-starter-todo-${self:provider.stage}
+  stackName: ${self:service}-starter-todo-${self:provider.stage}
   stage: ${opt:stage, 'dev'}
   iamRoleStatements:
     # Replace these square brackets with IAM permissions.
     []
 ```
 
+- Replace `yourname`
 - We'll be running on AWS
 - We're using the Node.js JavaScript runtime for our API
-- We'll default the application to run in Sydney (**ap-southeast-2**)
+- We'll default the application to run in HongKong (**ap-east-1**)
 - We'll default the application stage to pre-production (**dev**)
 
 ---
@@ -109,6 +110,8 @@ resources:
       Type: AWS::S3::Bucket
       Properties:
         # add properties here
+        WebsiteConfiguration:
+          IndexDocument: index.html
 
   Outputs:
     WebsiteBucketName:
@@ -135,7 +138,6 @@ resources:
   Resources:
     WebsiteBucket:
       # same as above
-      ...
     WebsiteBucketPolicy:
       Type: AWS::S3::BucketPolicy
       Properties:
@@ -168,7 +170,7 @@ serverless deploy --verbose
 # Service Information
 # service: serverless-starter-todo
 # stage: dev
-# region: ap-southeast-2
+# region: ap-east-1
 # stack: serverless-starter-todo-dev
 # api keys:
 #   None
@@ -259,9 +261,11 @@ To create a serverless API with API Gateway and Lambda, we need to fill out the
 What do you think this section does?
 
 ```yaml
+provider:
+  role: arn:aws:iam::494526681395:role/service-role/devops-girls-todo-role
 functions:
   TodoApi:
-    name: serverless-starter-todo-api-${self:provider.stage}
+    name: ${self:service}-api-${self:provider.stage}
     handler: index.handler
     environment:
       # Replace these curly brackets with environment variables.

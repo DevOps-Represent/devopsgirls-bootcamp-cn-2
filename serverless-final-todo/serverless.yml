@@ -1,14 +1,15 @@
-service: serverless-final-todo
+service: serverless-final-todo-${yourname}
 
 custom:
   tableName: ${self:service}-${self:provider.stage}
 
 provider:
   name: aws
-  region: ${opt:region, 'ap-southeast-2'}
+  region: ${opt:region, 'ap-east-1'}
   runtime: nodejs8.10
   stackName: ${self:service}-${self:provider.stage}
   stage: ${opt:stage, 'dev'}
+  role: arn:aws:iam::494526681395:role/service-role/devops-girls-todo-role
   usagePlan:
     throttle:
       burstLimit: 100
@@ -58,9 +59,6 @@ resources:
       Type: AWS::S3::Bucket
       DeletionPolicy: Retain
       Properties:
-        Tags:
-          - Key: Public # this is a SEEK thing
-            Value: Static assets for DevOps-Girls/DevOps-Girls-Bootcamp-4
         WebsiteConfiguration:
           IndexDocument: index.html
     WebsiteBucketPolicy:

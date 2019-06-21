@@ -51,7 +51,7 @@ serverless deploy --verbose
 # Service Information
 # service: serverless-final-todo
 # stage: dev
-# region: ap-southeast-2
+# region: ap-east-1
 # stack: serverless-final-todo-dev
 # api keys:
 #   None
@@ -68,7 +68,7 @@ serverless deploy --verbose
 Upload static website assets:
 
 ```shell
-aws s3 sync ./website/ s3://serverless-final-todo-dev-websitebucket-abcdefghijklm/
+aws s3 sync ./ui/dist/ s3://serverless-final-todo-dev-websitebucket-abcdefghijklm/
 ```
 
 ## Test API
@@ -76,7 +76,7 @@ aws s3 sync ./website/ s3://serverless-final-todo-dev-websitebucket-abcdefghijkl
 macOS and Linux (sh):
 
 ```shell
-subdomain='1234567890'
+subdomain='your subdomain'
 
 curl --request GET "https://$subdomain.execute-api.ap-southeast-2.amazonaws.com/dev/todos"
 
@@ -98,7 +98,7 @@ curl --request GET "https://$subdomain.execute-api.ap-southeast-2.amazonaws.com/
 Windows (PowerShell):
 
 ```powershell
-$subdomain='1234567890'
+$subdomain='your subdomain'
 
 Invoke-RestMethod -Method GET -Uri "https://$subdomain.execute-api.ap-southeast-2.amazonaws.com/dev/todos"
 

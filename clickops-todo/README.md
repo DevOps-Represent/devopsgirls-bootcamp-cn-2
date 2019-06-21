@@ -12,7 +12,7 @@ In this practical session, we will
 
 Let's take a look at how this hangs together and what we're going to be creating!
 
-![Architecture](https://github.com/DevOps-Girls/DevOps-Girls-Bootcamp-4/blob/master/images/architecture.png?raw=true)
+![Architecture](/images/architecture.png)
 
 ---
 

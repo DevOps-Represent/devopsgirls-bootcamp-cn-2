@@ -26,9 +26,9 @@ Go to Services > S3, then click on "Create Bucket"
 
 ### 2.) Choose a name for S3 Bucket
 
-Enter a unique bucket name and click "Next". The bucket name has to be globally unique. So use something like `yourname-devopsgirls-site`
+Enter a unique bucket name and click "Next". The bucket name has to be globally unique. So use something like `yourname-devops-girls-site`
 
-![s3](https://github.com/DevOps-Girls/DevOps-Girls-Bootcamp-4/blob/master/images/s3_1.png?raw=true)
+![s3](/images/s3_1.png)
 
 ### 3.) Accept defaults for "Configure Options"
 
@@ -36,17 +36,17 @@ Click "Next" without making any changes.
 
 ### 4.) Make bucket public
 
-WE ADVISE NEVER MAKING AN S3 BUCKET PUBLIC! Unless you're using it to host a website, then you need to make it public so people can view your site.
+**WE ADVISE NEVER MAKING AN S3 BUCKET PUBLIC!** Unless you're using it to host a website, then you need to make it public so people can view your site.
 
-So when you get to the 'permissions' options, this means you're UNTICKING these boxes:
+Unticking the **Block all public access** box:
 
-![s3](https://github.com/DevOps-Girls/DevOps-Girls-Bootcamp-4/blob/master/images/s3_2.png?raw=true)
+![s3](/images/s3_2.png)
 
 ### 5.) Confirm bucket creation
 
 Review the inputs, and click "Create Bucket"
 
-![Create Bucket](https://github.com/DevOps-Girls/devopsgirls-bootcamp3/blob/master/images/3-3-serverless-static-site/3-3-5-create-s3-bucket.png?raw=true)
+![Create Bucket](/images/s3-3.png)
 
 ## Configure S3 bucket as a webserver
 
@@ -144,22 +144,23 @@ Now we need a function that puts new values into our Dynamodb via API requests s
 
 ...then fill in the required fields as per the below:
 
-- Name: [yourname_lambda_fn]
+- Name: **[yourname_devops_girls_fn]**
 
-- Runtime: Nodejs
+- Runtime: **Nodejs 10.x**
 
-- Role: 'Create new role from one or more templates'
+- Permission:
 
-- Role Name: [yourname_lambda_role]
+  - Role: **'Use an existing role'**
 
-- Policy Templates: Simple Micoservices Permission
+  - Existing role: **service-role/devops-girls-todo-role**
 
-![Lambda](https://github.com/DevOps-Girls/DevOps-Girls-Bootcamp-4/blob/master/images/lambda_3.png?raw=true)
+![Lambda](/images/lambda_3.png)
 
 ### 3.) Add your Lambda Code
 
-Think back to the [architecture diagram](https://github.com/DevOps-Girls/DevOps-Girls-Bootcamp-4/blob/master/images/architecture.png?raw=true)
-, the thing that allows our web app to actually work is a Lambda Function.
+Think back to the architecture diagram, the thing that allows our web app to actually work is a Lambda Function.
+
+![Architecture](/images/architecture.png)
 
 Click on the name of your Lambda Function at the top of the page
 
@@ -203,13 +204,13 @@ For the purpose of learning, our Endpoint type will be regional, which means our
 
 Now choose the options in the screenshot below:
 
-![APIGateway](https://github.com/DevOps-Girls/DevOps-Girls-Bootcamp-4/blob/master/images/api_2.png?raw=true)
+![APIGateway](/images/api_2.png)
 
 Now we have an API, we need to create from 'programmable entities'. Without diving into the complexity now, this is how we create the 'method resources' i.e. POST, GET, DELETE etc. For us, we're not fussy, so we want all the HTTP methods.
 
 Then go to Resources > Actions > Create Resource
 
-![APIGateway](https://github.com/DevOps-Girls/DevOps-Girls-Bootcamp-4/blob/master/images/api_resource.png?raw=true)
+![APIGateway](/images/api_resource.png)
 
 - Click "Configure as Proxy Resource" check box
 
@@ -227,7 +228,7 @@ Enter the name of your Lambda Function
 
 Click "Save"
 
-![APIGateway](https://github.com/DevOps-Girls/DevOps-Girls-Bootcamp-4/blob/master/images/api_6.png?raw=true)
+![APIGateway](/images/api_6.png)
 
 Resources > Actions > Deploy API
 

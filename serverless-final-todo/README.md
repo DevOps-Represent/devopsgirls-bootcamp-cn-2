@@ -32,7 +32,7 @@ S3 -- API Gateway -- Lambda -- DynamoDB
 ## Create from template
 
 ```shell
-serverless create --template-url https://github.com/DevOps-Girls/DevOps-Girls-Bootcamp-4/tree/master/serverless-final-todo
+serverless create --template-url https://github.com/DevOps-Girls/devopsgirls-bootcamp-cn-2/tree/master/serverless-final-todo
 
 # Serverless: Generating boilerplate...
 # Serverless: Downloading and installing "serverless-final-todo"...

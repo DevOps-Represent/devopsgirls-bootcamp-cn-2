@@ -36,8 +36,8 @@ Things you'll need:
 
 - a laptop!
 
-- Setup local envrionment.  
-  - [Windows](guideline/set-up-environment-in-windows.md)
+- [Setup envrionment](guideline/set-up-environment-in-windows.md)
+
 ---
 
 ## Learning session content
